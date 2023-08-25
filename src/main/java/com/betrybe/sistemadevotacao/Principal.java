@@ -7,26 +7,25 @@ public class Principal {
   private static final Scanner scanner = new Scanner(System.in);
   private static final GerenciamentoVotacao gv = new GerenciamentoVotacao();
 
-  private static final String MENU_CADASTRO_CANDIDATO = """
-        Cadastrar pessoa candidata?
-        1 - Sim
-        2 - Não
-        Entre com o número correspondente à opção desejada:
-        """;
+  private static final String MENU_CADASTRO_CANDIDATO =
+      "Cadastrar pessoa candidata?\n"
+          + "1 - Sim\n"
+          + "2 - Não\n"
+          + "Entre com o número correspondente à opção desejada:\n";
 
-  private static final String MENU_CADASTRO_ELEITOR = """
-        Cadastrar pessoa eleitora?
-        1 - Sim
-        2 - Não
-        Entre com o número correspondente à opção desejada:
-        """;
+  private static final String MENU_CADASTRO_ELEITOR =
+      "Cadastrar pessoa eleitora?\n"
+          + "1 - Sim\n"
+          + "2 - Não\n"
+          + "Entre com o número correspondente à opção desejada:\n";
 
-  private static final String MENU_VOTACAO = """
-        Entre com o número correspondente à opção desejada:
-        1 - Votar
-        2 - Resultado Parcial
-        3 - Finalizar Votação
-        """;
+  private static final String MENU_VOTACAO =
+      "Entre com o número correspondente à opção desejada:\n"
+          + "1 - Votar\n"
+          + "2 - Resultado Parcial\n"
+          + "3 - Finalizar Votação\n";
+
+
 
   /** Main. */
   public static void main(String[] args) {
@@ -42,13 +41,17 @@ public class Principal {
       int opcao = Integer.parseInt(obterInput(MENU_VOTACAO));
 
       switch (opcao) {
-        case 1 -> votar();
-        case 2 -> gv.mostrarResultado();
-        case 3 -> {
+        case 1:
+          votar();
+          break;
+        case 2:
+          gv.mostrarResultado();
+          break;
+        case 3:
           gv.mostrarResultado();
           return;
-        }
-        default -> System.out.println("Opção inválida.");
+        default:
+          System.out.println("Opção inválida.");
       }
     }
   }
